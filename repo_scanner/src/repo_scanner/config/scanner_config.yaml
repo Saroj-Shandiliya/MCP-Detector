@@ -1,0 +1,76 @@
+# Scanner Configuration
+# MCP Protocol Detection Rules
+
+weights:
+  keyword_match: 0.1
+  dependency_match: 0.1 # Low default, regex patterns handle high value
+  ast_match: 1.0
+
+thresholds:
+  classification:
+    high: 8.0
+    medium: 5.0
+
+keywords:
+  # Legacy fallback
+  server_indicators: []
+  client_indicators: []
+
+patterns:
+  # Group A: Official SDK & Repo Names (+5 for dependency/package hits)
+  - name: "Official MCP SDK"
+    regex: '(?i)@modelcontextprotocol\/[a-z0-9\-\_]+'
+    score: 5.0
+    classification: "SERVER"
+
+  - name: "ModelContextProtocol Mention"
+    regex: '(?i)modelcontextprotocol'
+    score: 1.0
+    classification: "SERVER"
+
+  # Group B: MCP Server Package Names / CLI
+  - name: "MCP Server Package"
+    regex: '(?i)\b(mcp[\-_]server|mcpserver)\b'
+    score: 5.0
+    classification: "SERVER"
+    
+  - name: "Server Name Pattern"
+    regex: '(?i)@?[\w\-]+\/server\-[\w\-]+|server\-[\w\-]+'
+    score: 2.0
+    classification: "SERVER"
+
+  # Group C: Transport & Core Classes (+4)
+  - name: "MCP Transport"
+    regex: '(?i)\b(SSEServerTransport|StdioServerTransport|stdio|streamable-?http|streamable_http)\b'
+    score: 4.0
+    classification: "SERVER"
+  
+  - name: "Server Class Import"
+    regex: '(?i)(from\s+mcp(\.server)?\s+import\s+Server|new\s+Server\()'
+    score: 2.0
+    classification: "SERVER"
+
+  # Group D: RPC Methods (+3)
+  - name: "MCP Tool Method"
+    regex: '(?i)\b(listTools|callTool|ListToolsRequestSchema|CallToolRequestSchema|registerTool|register_tools)\b'
+    score: 3.0
+    classification: "SERVER"
+
+  # Group E: Dependency/Config Files (+5)
+  - name: "MCP Dependency Declaration"
+    regex: "(?i)(@modelcontextprotocol/[^\"]+|'@modelcontextprotocol/[^']+'|mcp[-_]server|mcp\\b)"
+    score: 5.0
+    classification: "SERVER"
+    # Note: KeywordScanner scans package.json/requirements.txt content too
+
+  # Group I: General Imports
+  - name: "MCP SDK Import"
+    regex: '(?i)(import\s+.*@modelcontextprotocol|require\([''"]@modelcontextprotocol\/|from\s+mcp(\.|\s+import)|require\s+[''"]mcp[''"])'
+    score: 2.0
+    classification: "SERVER"
+
+  # Security Heuristics (Flags)
+  - name: "Potential RCE/Security Risk"
+    regex: '(?i)(spawn|subprocess\.Popen|os\.system|shell=True)'
+    score: 0.0 # Just a flag, doesn't add to server score directly but good to know
+    classification: "RISK"

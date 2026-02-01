@@ -1,0 +1,203 @@
+{
+  "repository": "../dummy_repo",
+  "classification": "SERVER",
+  "confidence": 62.1,
+  "indicators": [
+    {
+      "type": "pattern_match",
+      "value": "Official MCP SDK: @modelcontextprotocol/sdk",
+      "file": "../dummy_repo\\requirements.txt",
+      "line": null,
+      "context": null,
+      "score": 5.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "pattern_match",
+      "value": "ModelContextProtocol Mention: modelcontextprotocol",
+      "file": "../dummy_repo\\requirements.txt",
+      "line": null,
+      "context": null,
+      "score": 1.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "pattern_match",
+      "value": "MCP Server Package: mcp-server",
+      "file": "../dummy_repo\\requirements.txt",
+      "line": null,
+      "context": null,
+      "score": 5.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "pattern_match",
+      "value": "MCP Dependency Declaration: @modelcontextprotocol/sdk\n",
+      "file": "../dummy_repo\\requirements.txt",
+      "line": null,
+      "context": null,
+      "score": 5.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "pattern_match",
+      "value": "MCP Dependency Declaration: mcp-server",
+      "file": "../dummy_repo\\requirements.txt",
+      "line": null,
+      "context": null,
+      "score": 5.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "dependency",
+      "value": "flask",
+      "file": "../dummy_repo\\requirements.txt",
+      "line": null,
+      "context": null,
+      "score": 0.0,
+      "classification": null
+    },
+    {
+      "type": "dependency",
+      "value": "requests",
+      "file": "../dummy_repo\\requirements.txt",
+      "line": null,
+      "context": null,
+      "score": 0.0,
+      "classification": null
+    },
+    {
+      "type": "dependency",
+      "value": "mcp-server",
+      "file": "../dummy_repo\\requirements.txt",
+      "line": null,
+      "context": null,
+      "score": 0.0,
+      "classification": null
+    },
+    {
+      "type": "pattern_match",
+      "value": "Official MCP SDK: @modelcontextprotocol/sdk",
+      "file": "../dummy_repo\\server.py",
+      "line": null,
+      "context": null,
+      "score": 5.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "pattern_match",
+      "value": "ModelContextProtocol Mention: modelcontextprotocol",
+      "file": "../dummy_repo\\server.py",
+      "line": null,
+      "context": null,
+      "score": 1.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "pattern_match",
+      "value": "MCP Server Package: mcp-server",
+      "file": "../dummy_repo\\server.py",
+      "line": null,
+      "context": null,
+      "score": 5.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "pattern_match",
+      "value": "MCP Transport: SSEServerTransport",
+      "file": "../dummy_repo\\server.py",
+      "line": null,
+      "context": null,
+      "score": 4.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "pattern_match",
+      "value": "Server Class Import: from mcp.server import Server",
+      "file": "../dummy_repo\\server.py",
+      "line": null,
+      "context": null,
+      "score": 2.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "pattern_match",
+      "value": "MCP Tool Method: callTool",
+      "file": "../dummy_repo\\server.py",
+      "line": null,
+      "context": null,
+      "score": 3.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "pattern_match",
+      "value": "MCP Tool Method: listTools",
+      "file": "../dummy_repo\\server.py",
+      "line": null,
+      "context": null,
+      "score": 3.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "pattern_match",
+      "value": "MCP Dependency Declaration: MCP",
+      "file": "../dummy_repo\\server.py",
+      "line": null,
+      "context": null,
+      "score": 5.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "pattern_match",
+      "value": "MCP Dependency Declaration: mcp-server",
+      "file": "../dummy_repo\\server.py",
+      "line": null,
+      "context": null,
+      "score": 5.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "pattern_match",
+      "value": "MCP Dependency Declaration: @modelcontextprotocol/sdk naming convention\nfrom m",
+      "file": "../dummy_repo\\server.py",
+      "line": null,
+      "context": null,
+      "score": 5.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "pattern_match",
+      "value": "MCP SDK Import: from mcp.",
+      "file": "../dummy_repo\\server.py",
+      "line": null,
+      "context": null,
+      "score": 2.0,
+      "classification": "SERVER"
+    },
+    {
+      "type": "ast_import",
+      "value": "socket",
+      "file": "../dummy_repo\\server.py",
+      "line": null,
+      "context": null,
+      "score": 0.0,
+      "classification": null
+    },
+    {
+      "type": "ast_import",
+      "value": "mcp.server",
+      "file": "../dummy_repo\\server.py",
+      "line": null,
+      "context": null,
+      "score": 0.0,
+      "classification": null
+    }
+  ],
+  "languages_detected": [
+    ".py",
+    ".txt"
+  ],
+  "files_scanned": 2,
+  "commit_sha": null,
+  "timestamp": "2026-02-01T18:45:33.430513"
+}

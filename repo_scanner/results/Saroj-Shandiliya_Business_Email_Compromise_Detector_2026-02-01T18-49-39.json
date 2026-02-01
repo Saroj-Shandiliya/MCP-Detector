@@ -1,0 +1,12 @@
+{
+  "repository": "Saroj-Shandiliya/Business_Email_Compromise_Detector",
+  "classification": "UNKNOWN",
+  "confidence": 0.0,
+  "indicators": [],
+  "languages_detected": [
+    ".js"
+  ],
+  "files_scanned": 4,
+  "commit_sha": null,
+  "timestamp": "2026-02-01T18:49:39.661542"
+}

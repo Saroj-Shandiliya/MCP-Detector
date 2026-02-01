@@ -1,0 +1,6 @@
+requests
+pyyaml
+click
+pydantic
+rich
+gitpython
