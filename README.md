@@ -59,7 +59,27 @@ python run_scanner.py org modelcontextprotocol
 **Example with JSON output:**
 ```bash
 python run_scanner.py repo facebook/react --output json
+python run_scanner.py repo facebook/react --output json
 ```
+
+### 📊 Results & Output
+
+*   **Console Summary**: Prints a clean table with high-level stats (Classification, Confidence, Top files).
+*   **Detailed JSON**: Automatically saves the full scan result to:
+    `repo_scanner/results/<repo_name>_<timestamp>.json`
+
+This ensures you don't lose data while keeping the terminal clean.
+
+### 🌍 Supported Languages
+The scanner currently detects and filters files for:
+*   **Python** (`.py`)
+*   **JavaScript/TypeScript** (`.js`, `.ts`, `.tsx`, etc.)
+*   **C/C++** (`.c`, `.cpp`, `.h`, `.hpp`)
+*   **Go** (`.go`)
+*   **Rust** (`.rs`)
+*   **Java** (`.java`)
+*   **C#** (`.cs`)
+
 
 ---
 
