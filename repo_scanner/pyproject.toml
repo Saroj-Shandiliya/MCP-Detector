@@ -1,0 +1,23 @@
+[project]
+name = "github-repo-scanner"
+version = "0.1.0"
+description = "A modular, extensible Python tool to scan GitHub repositories and classify them."
+authors = [
+    {name = "User", email = "user@example.com"},
+]
+dependencies = [
+    "requests",
+    "pyyaml",
+    "click",
+    "pydantic",
+    "rich",
+    "gitpython"
+]
+requires-python = ">=3.9"
+
+[project.scripts]
+repo-scanner = "repo_scanner.cli.main:cli"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
